@@ -38,7 +38,7 @@ public class Problem {
     }
 
     private static String minToTime(int time) {
-        return String.format("%2d:%2d", time / 60, time % 60);
+        return String.format("%02d:%02d", time / 60, time % 60);
     }
 
     private static int timeToMin(String s) {
@@ -82,29 +82,5 @@ class Node implements Comparable {
             ans = Integer.compare(-come, -obj.getCome());
         }
         return ans;
-    }
-}
-
-class Visitor {
-    private final int num;
-    private final int timeIn;
-    private final int timeOut;
-
-    public Visitor(int num, int timeIn, int timeOut) {
-        this.num = num;
-        this.timeIn = timeIn;
-        this.timeOut = timeOut;
-    }
-
-    public int getNum() {
-        return num;
-    }
-
-    public int getTimeIn() {
-        return timeIn;
-    }
-
-    public int getTimeOut() {
-        return timeOut;
     }
 }
