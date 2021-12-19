@@ -17,9 +17,9 @@ public class Problem {
 
         Collections.sort(nodes);
 
-        for (Node i : nodes) {
+        /*for (Node i : nodes) {
             System.out.println(i);
-        }
+        }*/
 
         int cnt = 0;
         int maxCnt = 0;
@@ -28,14 +28,17 @@ public class Problem {
             cnt += nodes.get(i).getCome();
             if (cnt > maxCnt) {
                 maxCnt = cnt;
-                left = nodes.get(i).getNum();
-            } else {
-                right = nodes.get(i - 1).getNum();
+                left = nodes.get(i).getTime();
+                right = nodes.get(i + 1).getTime();
             }
         }
 
-        System.out.println(left + " " + right);
+        System.out.println(minToTime(left) + " " + minToTime(right));
 
+    }
+
+    private static String minToTime(int time) {
+        return String.format("%2d:%2d", time / 60, time % 60);
     }
 
     private static int timeToMin(String s) {
